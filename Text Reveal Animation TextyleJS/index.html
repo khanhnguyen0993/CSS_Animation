@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+  <title>Text Reveal Animation</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="content">
+    <h2 class="demo">Simple Text Animation</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, fugiat consequatur excepturi ipsum accusamus quod natus. Minima delectus, quis officiis praesentium non deleniti, ipsam tempore ex, nisi quaerat ullam! Accusantium!</p>
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="textyle.js"></script>
+  <script>
+    $(function(){
+      $('.demo').textyle({
+        duration: 500,
+        delay: 200,
+        easing: 'linear',
+        callback: function(){
+          $(this).css({
+            transform: 'translateY(0px) rotateY(360deg)'
+          })
+        }
+      });
+      $('p').textyle();
+    });
+  </script>
+</body>
+</html>
