@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Validation - Vanilla Script</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex justify-content-center align-items-center min-vh-100">
+  <section>
+    <h3>Email Validation Check</h3>
+    <form action="#" id="form">
+      <div class="inputBox">
+        <input type="text" name="" id="email" placeholder="Enter Email" onkeyup="validation()" autocomplete="off">
+        <span id="text"></span>
+      </div>
+    </form>
+  </section>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+  <script>
+      function validation(){
+        var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        if ($('#email').val().match(pattern)) {
+          $('#form').addClass("valid");
+          $('#form').removeClass("invalid");
+          $('#text').html("Your Email Address is Valid");
+          $('#text').css("color", "green");
+        } else {
+          $('#form').removeClass("valid");
+          $('#form').addClass("invalid");
+          $('#text').html("Your Email Address is Invalid");
+          $('#text').css("color", "red");
+          console.log($('#email').val());
+        }
+
+        if (!$('#email').val()) {
+          $('#form').removeClass("valid");
+          $('#form').removeClass("invalid");
+          $('#text').html("");
+        }
+      }
+  </script>
+</body>
+</html>
