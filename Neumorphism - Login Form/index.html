@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Neumorphism Login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark-color">
+  <section id="settings">
+    <label>
+      <input id="modeCheck" type="checkbox" >
+      <span class="check"></span>
+    </label>
+  </section>
+  <section class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="form bg-dark-color">
+      <h2>Login</h2>
+      <div class="input">
+        <div class="inputBox">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="" placeholder="example@xyz.com" autocomplete="off">
+        </div>
+        <div class="inputBox">
+          <label for="password">Password</label>
+          <input id="password" type="password" name="" placeholder="********">
+        </div>
+        <div class="inputBox">
+          <input id="submit" type="submit" name="" value="Sign In">
+        </div>
+      </div>
+      <p class="forget">Forget Password? <a href="#">Click Here</a></p>
+    </div>
+  </section>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script>
+    let root = document.documentElement;
+
+    $('#modeCheck').on('click', function(){
+       if(this.checked){
+        root.style.setProperty("--mode-color", "#131419");
+        console.log('checked');
+      }else{
+        root.style.setProperty("--mode-color", "--light-color");
+        console.log('unchecked');
+      }
+    });
+     
+  </script>
+</body>
+</html>
